@@ -4,7 +4,7 @@
   
   	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring.xml,classpath:spring-mybatis.xml</param-value>
+		<param-value>classpath:spring.xml,classpath:applicationContext.xml</param-value>
   	</context-param>
 	
 	<filter>
@@ -27,18 +27,18 @@
 	
 	<servlet>
 		<description>spring mvc servlet</description>
-		<servlet-name>springmvc</servlet-name>
+		<servlet-name>servlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<description>springmvc config</description>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring-mvc.xml</param-value>
+			<param-value>classpath:dispatcherServlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>springmvc</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<servlet-name>servlet</servlet-name>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
     <welcome-file-list>
