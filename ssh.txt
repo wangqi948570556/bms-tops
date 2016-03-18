@@ -1,6 +1,6 @@
 1.首先要在GitHub上创建一个帐号，由于本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以要在本地生成一个私钥和一个密钥
 命令，后面跟的邮箱，要跟你自己的
-$ ssh-keygen -t rsa -C “wangle@mittop.com”（邮件地址一定不能出错）
+输入 ssh-keygen -t rsa -C “wangle@mittop.com”（邮件地址一定不能出错）
 如果邮件错误输入：git config --global user.email "wangqi@mittop.com"
 
 2.找到.ssh文件夹
@@ -31,7 +31,8 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-查看状态 git status  
+6.查看状态
+输入： git status  
 如果显示：Changes to be committed 
 执行：git rm --cached pom.xml  将文件状态还原为未暂存状态 回到“Untracked files”文件状态
 执行 1.git add fileName 2.git commit -m “note” 3.git push -u origin master
