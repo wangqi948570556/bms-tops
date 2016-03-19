@@ -7,19 +7,6 @@
     <result column="AGE" property="age" jdbcType="DECIMAL" />
     <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    ID, NAME, AGE, ADDRESS
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from MUSER
-    where ID = #{id,jdbcType=VARCHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from MUSER
-    where ID = #{id,jdbcType=VARCHAR}
-  </delete>  
   <select id="getAll" resultMap="BaseResultMap">
 	select ID, NAME, AGE, ADDRESS from muser
   </select>
