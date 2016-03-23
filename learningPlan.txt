@@ -1,10 +1,16 @@
 2016学习计划
 1.shell脚本命令
-
 2.Linux服务器搭建 及命令
-
 3.多线程
-
 4.socket通信
-
 5.前台js  jquery  
+集合 list  map  set
+ArrayList  LinkedList  Hashtable  hashMap  hashSet  ConcurrentHashMap
+设计模式
+JDK源码
+java虚拟机
+框架
+数据库
+数据结构算法分析(二叉树)
+web 问题i
+session 和 Cookie 
