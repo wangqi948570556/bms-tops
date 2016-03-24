@@ -7,7 +7,6 @@
 	<meta http-equiv="Content-Type" contentType="text/html; charset=UTF-8">
 	<title>第一个JQUREY</title>
 	<script type="text/javascript" language="javascript" src="script/jquery-1.8.3.min.js"></script>
-<!-- 	<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.12.2.min.js"></script> -->
     <style type="text/css">
 
      </style>
@@ -18,11 +17,16 @@
     var user_name=$("#test").attr("value");
     alert(user_name);
     }
+   function logout()
+	{
+	       parent.window.location.href='imagRotation.jsp';
+	 }
   </script>
 <body>
     <img src="images/1.jpg">
     <input id="test" value="jquery">
     <input type="button" value="click me!" onclick="testjquery();">
+    <input type="button" value="图片轮换" onclick="logout();">
 </body>
 
 </html>
