@@ -9,3 +9,9 @@ when Not MATCHED then
 --查看sql执行计划
   explain plan for select * from bms_project;
    select * from table(dbms_xplan.display);
+--oracle查询连接方式
+ inner join --内连接 （两表都有关联的数据）
+ left join --左外连接 （以左边表为主，查询所有左表数据）
+ right join --右外连接
+ full outer join  --全外连接
+ cross join --交叉连接

@@ -15,3 +15,8 @@
     CREATE CLUSTERED INDEX mycolumn_cindex ON mytable(mycolumn) WITH
     ALLOW_DUP_ROW(允许有重复记录的聚簇索引)
    非聚簇索引：CREATE UNCLUSTERED INDEX mycolumn_cindex ON mytable(mycolumn)
+   
+   创建索引
+    create index employee_name on employment(employee_id); --普通索引
+    create unique index employee_name on employment(employee_id); --唯一索引
+    create index employee_name on employment(employee_id,maxsalary); --复合索引
