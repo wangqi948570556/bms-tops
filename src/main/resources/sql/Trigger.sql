@@ -60,7 +60,7 @@ CREATE TABLE EMPLOYMENT
 Insert into employment values(1, 1000);
 Insert into employment values(2, 2000);
 CREATE OR REPLACE TRIGGER salary_raiu
-AFTER INSERT OR UPDATE OF amount ON salary
+AFTER INSERT OR UPDATE ON maxsalary
 FOR EACH ROW
 WHEN ( NEW.amount >= 1000 AND (old.amount IS NULL OR OLD.amount <= 500))
 DECLARE

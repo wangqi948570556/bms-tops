@@ -1,3 +1,4 @@
+优点：1 减少网络传输 2 
 oracle 存储过程的基本语法
 1.基本结构 
 CREATE OR REPLACE PROCEDURE 存储过程名字
