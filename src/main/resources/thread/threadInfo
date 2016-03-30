@@ -1,0 +1,8 @@
+1.volatile关键字
+ volatile关键字修饰变量 保证数据的（可见性，顺序性，一致性）每个线程访问volatile变量时，都是从主内存中获取该变量的最新数据
+2.wait和sleep的区别
+ 线程调用wait会释放锁，sleep一直持有锁，wait用于线程交互，sleep用于暂停线程
+ 线程调用sleep设定的时间到了，线程会自动开始执行，调用wait后，必须执行notify或notifyAll来唤醒线程
+3start和run方法的区别
+ 调用star方法会创建一个新的线程并且执行run方法中的代码，
+ 调用run方法不会创建新的线程也不会执行调用线程中的代码。
