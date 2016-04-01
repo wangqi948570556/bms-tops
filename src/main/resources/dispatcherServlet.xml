@@ -5,10 +5,14 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd 
 http://www.springframework.org/schema/mvc 
 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-    <!--     启动spring注解 -->
-    <mvc:annotation-driven />
-	
+    <!--  允许对静态资源文件的访问 不然图片加载不出来-->
+    <mvc:default-servlet-handler />
+    <!-- Spring 容器注册 -->
+    <context:annotation-config/>
+	<!-- 把标记了@Controller注解的类转换为bean -->
 	<context:component-scan base-package="com.wq.produce.*"/>
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
     <!-- 视图过滤器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
 		  p:prefix="/" p:suffix=".jsp" />

@@ -1,0 +1,4 @@
+浏览器缓存机制
+Pragma: no-cache  所有内存都不会都不被缓存，在响应头中设置
+Cache-Control: no-cache
+Expires 后面跟一个日期和时间，操作这个时间，缓存过期
