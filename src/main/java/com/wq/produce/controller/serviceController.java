@@ -21,8 +21,8 @@ public class serviceController {
             @RequestParam(value = "scope", required = false) String scope,
             HttpServletRequest request, HttpServletResponse response){
 		try {
-			int a = 3/0;
 			System.out.println("hehehhehehh");
+			int a = 3/0;
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error("Find projectCategories failed.", e);

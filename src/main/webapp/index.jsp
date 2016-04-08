@@ -26,6 +26,7 @@
     <img src="images/1.jpg">
     <input id="test" value="jquery">
     <input type="button" value="click me!" onclick="testjquery();">
+    <input type="button" value="后台方法" href="test.do">
     <input type="button" value="图片轮换" onclick="logout();">
 </body>
 
