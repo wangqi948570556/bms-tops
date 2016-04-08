@@ -1,0 +1,13 @@
+Linux命令
+1.chfn[-fohpuv] 修改finger指令显示信息 -f(full name) 姓名 -o(office) 办公地址 -h 办公电话 -p(office phone) 手机号 -u(help) 在线帮助 -v(version) 版本信息
+2.chsh[-sluv] 改变登入系统时使用的shell -s(shell) shell名称 -l(list shells) 列出所有shell清单 -u(help) 在线帮助 -v(version) 版本信息
+3.finger[-lmsp][username] 查找并显示用户信息 -l 列出用户所有信息 -m 排除查找用户的真实名称 -s 列出用户信息 -p列出用户信息
+4.free[-bkmotV]-s1 显示内存信息 -b以byte为单位显示内存情况 -k以KB为单位显示内存情况 -m以MB为单位显示内存信息 
+       -o不显示缓存区调节列 -s<间隔秒数> 持续观察情况 -t显示内存总和列 -V显示版本信息
+5.last[-adRx][f<-fileName>][-n<num>] 显示登录用户信息 -a把从何处登录系统的主机名和ip地址，显示在最后一行 －d将IP地址转换成主机名称 
+       -f<fileName> 指定记录文件 -n<columnNum>显示列数 -R不显示登录系统的主机名或IP -x显示系统关机，重新开机，以及执行登记的改变信息
+6.lastb 列出登录系统失败的用户
+7.login 登录系统，可以指定任意用户登录系统
+8.logname 显示当前登录用户名
+9.logout 退出系统
+10.logrotate 管理记录文件
