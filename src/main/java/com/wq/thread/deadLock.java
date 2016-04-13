@@ -9,7 +9,7 @@ public class deadLock implements Runnable {
 				synchronized (Lock.lock1) {
 					System.out.println("锁住lock1");
 					try {
-						Thread.sleep(2000);
+						MyThread.sleep(2000);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -21,7 +21,7 @@ public class deadLock implements Runnable {
 				synchronized (Lock.lock2) {
 					System.out.println("锁住lock2");
 					try {
-						Thread.sleep(2000);
+						MyThread.sleep(2000);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}

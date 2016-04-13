@@ -6,9 +6,40 @@
 3start和run方法的区别
  调用star方法会创建一个新的线程并且执行run方法中的代码，
  调用run方法不会创建新的线程也不会执行调用线程中的代码。
- 
+ join();线程的执行顺序
+ yield();把运行机会让给同优先级的其它程序，如果没有则继续运行当前线程(使当前线程进入到可执行状态)
+ isAlive();如果运行或阻塞返回true，如果死亡，返回false
+ isDaemon();测试线程是否为守护线程
+ setDaemon(treu);设置线程为守护线程
  产生死锁的四个必要条件：
 （1） 互斥条件：一个资源每次只能被一个进程使用。
 （2） 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。
 （3） 不剥夺条件:进程已获得的资源，在末使用完之前，不能强行剥夺。
 （4） 循环等待条件:若干进程之间形成一种头尾相接的循环等待资源关系。
+
+4.线程池
+(1)ExecutorService cacheThread = Executors.newCachedThreadPool(); 缓存线程池(重复利用同一个线程 ,超出处理需要可灵活回收)
+        cachethread.execute(new Runnable());
+(2)ExecutorService fixedThread = Executors.newFixedThreadPool(3); 定长线程池(重复利用同一个线程)
+        fixedThread.execute(new Runnable());
+(3)ScheduledExecutorService scheduleThread = Executors.newScheduledThreadPool(3); 定长线程池,支持定时及周期性任务执行
+        scheduleThread.schedule(new Runnable(),3,TimeUnit.SECONDS); 延迟3秒执行
+        scheduleThread.scheduleAtFixedRate(new Runnable(),1,3,TimeUnit.SECONDS);延迟1秒执行之后没3秒执行一次
+(4)ExecutorService singleThread = Executors.newSingleThreadExecutor(); 单线程线程池(只用唯一的线程来执行，按顺序输出)
+        singleThread.execute(new Runnable());
+        
+5.线程的优先级
+ 线程的优先级用数字表示，从1-10，一个线程的缺省值是5
+ Thread.MIN_PRIORITY=1
+ Thread.MAX_PRIORITY=10
+ Thread.NORM_PRIORITY=5
+ 使用方法获取和设置线程的优先级
+ Thread.getPriority();
+ Thread.setPriority(int newPriority);
+6.线程的5大状态
+ 新建状态
+ 就绪状态
+ 运行状态
+ 阻塞状态
+ 死亡状态
+    
