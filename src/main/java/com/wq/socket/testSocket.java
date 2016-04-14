@@ -2,7 +2,7 @@ package com.wq.socket;
 
 public class testSocket {
 	public static void main(String[] args) {
-		int port = 1234;
+		int port = 8080;
 		tcpSocketService server = new tcpSocketService(port) {
 			
 			@Override
