@@ -44,4 +44,17 @@
  运行状态
  阻塞状态
  死亡状态
+7.临界区并发执行调用add()方法会导致线程非安全，add()方法就是临界区
+8.new CountDownLatch(int count) await()线程挂起等待记数值为0才继续执行 countDown() 将count值减1,主任务等其它count个子任务执行完成才执行
+ new CyclicBarrier(int count,Runnable barrierAction) await() await(long time,TimeUnit unit) 让一组线程等待到某个状态再执行
+ (可以让count个线程都执行完后再继续执行) 可以重用
+9.new Semaphore(int permits,boolean fair) permits许可个数,是否公平
+    (acquire()获取一个许可 acquire(int permits)获取permits个许可 release()释放一个许可，release(int permits)释放permits个许可)
+    用于控制对某组资源的访问权限
+10.读锁和写锁
+    ReadWriteLock类
+        lockRead();获取读锁
+        unlockRead();释放读锁
+        lockWrite();获取写锁
+        unlockWrite();释放写锁
     

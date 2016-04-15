@@ -22,7 +22,7 @@ public class deadLock implements Runnable {
                 }  
             }  
         }  
-        if (flag == 0) {  
+        if (flag == 2) {  
             synchronized (o2) {  
                 try {  
                     Thread.sleep(1000);  
@@ -37,8 +37,10 @@ public class deadLock implements Runnable {
     }
 	public static void main(String[] args) {
 		deadLock td1 = new deadLock(1);  
-		deadLock td2 = new deadLock(0);  
-        new Thread(td1).start();  
-        new Thread(td2).start(); 
+		deadLock td2 = new deadLock(2);  
+//        new Thread(td1).start();  
+//        new Thread(td2).start(); 
+		new Thread(td1).run();
+		new Thread(td2).run();
 	}
 }
