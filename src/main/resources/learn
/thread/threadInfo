@@ -1,5 +1,6 @@
 1.volatile关键字
  volatile关键字修饰变量 保证数据的（可见性，顺序性，一致性）每个线程访问volatile变量时，都是从主内存中获取该变量的最新数据
+ ThreadLocal 设置当前线程的局部变量值(为每一个线程分配一个变量副本，)
 2.wait和sleep的区别
  线程调用wait会释放锁，sleep一直持有锁，wait用于线程交互，sleep用于暂停线程
  线程调用sleep设定的时间到了，线程会自动开始执行，调用wait后，必须执行notify或notifyAll来唤醒线程
@@ -11,6 +12,7 @@
  isAlive();如果运行或阻塞返回true，如果死亡，返回false
  isDaemon();测试线程是否为守护线程
  setDaemon(treu);设置线程为守护线程
+ holdsLock(Object obj) 坚持线程是否持有对象监视器(持有返回true)
  产生死锁的四个必要条件：
 （1） 互斥条件：一个资源每次只能被一个进程使用。
 （2） 请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。

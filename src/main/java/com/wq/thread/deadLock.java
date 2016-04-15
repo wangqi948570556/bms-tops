@@ -13,7 +13,7 @@ public class deadLock implements Runnable {
         if (flag == 1) {  
             synchronized (o1) {  
                 try {  
-                    Thread.sleep(500);  
+                    Thread.sleep(1000);  
                 } catch (Exception e) {  
                     e.printStackTrace();  
                 }  
@@ -25,7 +25,7 @@ public class deadLock implements Runnable {
         if (flag == 0) {  
             synchronized (o2) {  
                 try {  
-                    Thread.sleep(500);  
+                    Thread.sleep(1000);  
                 } catch (Exception e) {  
                     e.printStackTrace();  
                 }  
@@ -38,8 +38,6 @@ public class deadLock implements Runnable {
 	public static void main(String[] args) {
 		deadLock td1 = new deadLock(1);  
 		deadLock td2 = new deadLock(0);  
-        //td1,td2都处于可执行状态，但JVM线程调度先执行哪个线程是不确定的。  
-        //td2的run()可能在td1的run()之前运行  
         new Thread(td1).start();  
         new Thread(td2).start(); 
 	}
