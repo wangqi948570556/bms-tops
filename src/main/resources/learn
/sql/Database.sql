@@ -9,7 +9,7 @@ merge into employment a using(
 select 1 as id, 500 as salary from dual
 ) b on ( a.employee_id= b.id)
 when matched then
-  update set a.maxsalary=b.salary
+  update set a.maxsalary=b.salary where 1=1;
 when Not MATCHED then
   insert(employee_id,maxsalary) values(b.id,b.salary);
 --查看sql执行计划
@@ -22,12 +22,13 @@ when Not MATCHED then
  full outer join  --全外连接
  cross join --交叉连接 （左表每个元素对应右表每个元素）
  --oracle修改字段语句
- alter table tableName modify (columnNmae varchar(10) default '1');
- alter table tableName add (columnName varchar(19) default '0');
- alter table tableName drop (columnName);
+ alter table tableName modify (columnNmae varchar(10) default '1');--修改列的类型
+ alter table tableName add (columnName varchar(19) default '0');--增加列
+ alter table tableName drop (columnName);--删除列
  alter table tableName rename column oldNmae to newName;--修改列名
  ALTER TABLE oldTableName RENAME TO newTableName;--修改表名
  alter table tableName add constraint columnName primary key(主键名);
+ rename oldTablename to newTableName;--修改表名
  --通过闪回查询到对应时间删除的数据并创建一张表保存
  create table bms_set_of_books_relation1 as ;
 select * from  bms_set_of_books_relation  as 
