@@ -36,11 +36,10 @@ public class ClientThread extends Thread{
 	                msg = reader.readLine();
 	            } catch (IOException e) {
 	                println("服务器断开连接");
-
 	                break;
 	            }
 	            if (msg != null && msg.trim() != "") {
-	                println("涛声依旧：" + msg);
+	                println(msg);
 	            }
 	        }
 	    }

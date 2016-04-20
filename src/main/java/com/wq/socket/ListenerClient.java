@@ -26,14 +26,13 @@ public class ListenerClient extends Thread {
                 writer = new PrintWriter(client.getOutputStream(), true);
                 msg = reader.readLine();
                 sendMsg(msg);
-                
             } catch (IOException e) {
                 println(e.toString());
-                // e.printStackTrace();
+                 e.printStackTrace();
                 break;
             }
             if (msg != null && msg.trim() != "") {
-                println("胖子：" + msg);
+                println(msg);
             }
         }
     }
@@ -45,7 +44,6 @@ public class ListenerClient extends Thread {
                 writer = new PrintWriter(client.getOutputStream(), true);
                 writer.println(msg);
             }
-
         } catch (Exception e) {
             println(e.toString());
         }

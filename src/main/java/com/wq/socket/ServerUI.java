@@ -18,8 +18,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class ServerUI extends JFrame {
-	 public static void main(String[] args) {
-	        ServerUI serverUI = new ServerUI();
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {
+	        new ServerUI();
 	    }
 
 	    public JButton btStart;//启动服务器
@@ -43,7 +45,7 @@ public class ServerUI extends JFrame {
 	        });
 	        btSend.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
-	                server.sendMsg(tfSend.getText());
+	                server.sendMsg("涛声依旧："+tfSend.getText());
 	                tfSend.setText("");
 	            }
 	        });

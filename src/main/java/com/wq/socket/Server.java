@@ -20,11 +20,9 @@ public class Server extends Thread {
 
     public void run() {
         try {
-
             ss = new ServerSocket(1228);
             ui.clients = new ArrayList<Socket>();
             println("启动服务器成功：端口1228");
-            
             while (true) {
                 println("等待客户端");
                 Socket client = ss.accept();
@@ -37,7 +35,6 @@ public class Server extends Thread {
             println(e.toString());
             e.printStackTrace();
         }
-
     }
 
     public synchronized void sendMsg(String msg) {
@@ -47,7 +44,6 @@ public class Server extends Thread {
                 writer = new PrintWriter(client.getOutputStream(), true);
                 writer.println(msg);
             }
-
         } catch (Exception e) {
             println(e.toString());
         }
@@ -71,6 +67,5 @@ public class Server extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

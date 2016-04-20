@@ -16,6 +16,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class ClientUI extends JFrame {
+	private static final long serialVersionUID = 1L;
 	public     JButton btStart;
     public     JButton btSend;
     public     JTextField tfSend;
@@ -25,7 +26,7 @@ public class ClientUI extends JFrame {
     public     JTextArea taShow;
     public     ClientThread server;
 	public static void main(String[] args) {
-        ClientUI client = new ClientUI();
+        new ClientUI();
     }
     public ClientUI() {
         super("客户端");
@@ -43,7 +44,7 @@ public class ClientUI extends JFrame {
         });
         btSend.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                server.sendMsg(tfSend.getText());
+                server.sendMsg("胖子："+tfSend.getText());
                 tfSend.setText("");
             }
         });
