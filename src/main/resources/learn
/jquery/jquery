@@ -1,0 +1,105 @@
+1.选择器
+$("p")//选择所有<p>元素
+$("p.info")//选择所有class等于info的<P>元素
+$("#test")//选择id等于test的元素
+$("[href]") //选择所有带有href的元素
+$("[href='#']")//选择所有带href值等于#的元素
+$("[href!='#']") 选取所有带有 href 值不等于 "#" 的元素
+$("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素
+$(document).ready(function(){
+    //mothed
+})
+2.显示和隐藏
+//speed值："slow"、"fast" 或毫秒
+$(selector).hide(speed,callback);//隐藏
+$(selector).show(speed,callback);//显示
+3.淡入淡出显示
+//speed值："slow"、"fast" 或毫秒
+$(selector).fadeIn(speed,callback);//淡入
+$(selector).fadeOut(speed,callback);//淡出
+$(selector).fadeToggle(speed,callback);//淡入淡出切换(如果是隐藏就显示，如果是显示就隐藏)
+$(selector).fadeTo(speed,callback);//允许渐变为给定的不透明度（值介于 0 与 1 之间）
+4.滑动显示
+//speed值："slow"、"fast" 或毫秒
+$(selector).slideDown(speed,callback)//向下滑动显示
+$(selector).slideUp(speed,callback)//向上滑动显示
+$(selector).slideToggle(speed,callback)//切换(如果向下就向上，如果向上就向下)
+5.动画
+//params定义形成动画的css属性 speed值："slow"、"fast" 或毫秒
+$(selector).animate({params},speed,callback);//可以配合其它效果一起使用
+$(selector).stop(stopAll,goToEnd);//stopAll是否应该清除动画队列。默认是 false goToEnd是否立即完成当前动画。默认是 false。
+$(selector).slideDown(speed,callback).slideUp(speed,callback)//按顺序链接执行
+6.Dom
+$(selector).text()//只显示文字
+$(selector).html()//获取所选元素的内容(包含html标记)
+$(selector).val()//获取文本框输入的值
+$(selector).text("")//设置值
+$(selector).attr({
+    "href" : "http://www.w3school.com.cn/jquery",
+    "title" : "W3School jQuery Tutorial"
+});//可同时修改多个值
+$(selector).attr("href", function(i,origValue){
+    return origValue + "/jquery";
+  });//带有回调函数的
+7.添加
+$(selector).append("hehe")// 在被选元素的结尾插入内容(参数可多个)
+$(selector).prepend("hehe")// 在被选元素的开头插入内容(参数可多个)
+$(selector).after("hehe")// 在被选元素之后插入内容(参数可多个)
+$(selector).before("hehe")// 在被选元素之前插入内容(参数可多个)
+8.删除
+$(selector).remove() - 删除被选元素（及其子元素）
+$(selector).empty() - 从被选元素中删除子元素
+9.CSS
+$(selector).addClass("css") - 向被选元素添加一个或多个类
+$(selector).removeClass("css") - 从被选元素删除一个或多个类
+$(selector).toggleClass("css") - 对被选元素进行添加/删除类的切换操作
+$(selector).css("css") - 设置或返回样式属性
+
+$(selector).css("background-color");//返回选中元素的背景颜色
+$(selector).css("background-color","yellow");//设置选中元素的背景颜色
+$(selector).css({"background-color":"yellow","font-size":"200%"});//设置多个CSS属性
+
+$(selector).width()//返回选中元素的宽度
+$(selector).height()//返回高度
+$(selector).innerWidth()//返回宽度包括内边框
+$(selector).innerHeight()//返回高度包括内边框
+$(selector).outerWidth()
+$(selector).outerHeight()
+10.遍历
+$(selector).parent();//返回被选元素的直接父元素
+$(selector).parents();//返回所有父元素
+$(selector).parentsUntil("div")// 返回介于两个给定元素之间的所有祖先元素。
+$(selector).children(); //返回被选元素的所有直接子元素
+$(selector).find("span");//返回被选元素的后代元素，一路向下直到最后一个后代。
+$(selector).find("*");//返回所有下级
+$(selector).siblings(); //返回被选元素的所有同胞元素(同级元素)
+$(selector).next();//返回被选元素的下一个同级元素
+$(selector).nextAll();//返回被选元素的下面所有同级元素
+$(selector).nextUntil("h6");//返回给定两者之前的所有同级别元素
+11.ajax
+$(selector).load(URL,data,callback);
+$("#div1").load("demo_test.txt",function(responseTxt,statusTxt,xhr){
+    if(statusTxt=="success")
+      alert("外部内容加载成功！");
+    if(statusTxt=="error")
+      alert("Error: "+xhr.status+": "+xhr.statusText);
+  });
+$.get(URL,callback);//get方法
+  $.get("demo_test.asp",function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+$.post(URL,data,callback);//post方法
+  $.post("demo_test_post.asp",{
+    name:"Donald Duck",
+    city:"Duckburg"
+  },
+  function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+
+$.noConflict() 方法会释放会 $ 标识符的控制，这样其他脚本就可以使用它了。
+
+
+
+
+

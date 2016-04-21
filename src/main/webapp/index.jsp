@@ -12,21 +12,25 @@
      </style>
 </head>
 <script type="text/javascript">
-   function testjquery()
-   {
-    var user_name=$("#test").attr("value");
-    alert(user_name);
+    function testjquery(){
+	    var user_name=$("#test").attr("value");
+	    alert(user_name);
+	    $("#test").hide();
     }
-   function logout()
-	{
-	       parent.window.location.href='imagRotation.jsp';
-	 }
+    function logout(){
+ 	    parent.window.location.href='imagRotation.jsp';
+    }
+    function test(){
+    	 $(document).ready(function(){
+             htmlobj=$.ajax({url:contextPath+"/test.do",async:false});
+           });
+    }
   </script>
 <body>
     <img src="images/1.jpg">
     <input id="test" value="jquery">
     <input type="button" value="click me!" onclick="testjquery();">
-    <input type="button" value="后台方法" href="test.do">
+    <input id="b01" type="button" value="后台方法" href="test()">
     <input type="button" value="图片轮换" onclick="logout();">
 </body>
 

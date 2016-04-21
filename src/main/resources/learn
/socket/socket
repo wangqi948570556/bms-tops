@@ -4,3 +4,18 @@ TCP---传输控制协议,提供的是面向连接、可靠的字节流服务。�
 UDP---用户数据报协议，是一个简单的面向数据报的运输层协议。UDP不提供可靠性，
       它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。
       由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快
+基于TCP:
+Server
+Serversocket server＝ new Serversocket(8080);
+Socket client = server.accept();//监听客户端请求
+BufferReader reader = new BufferReader(new InputStramReader(client.getInPutStram()));
+PrintWriter writer = new PrintWriter(client.getOutPutStram(),true);
+String msg = reader.readLine();//获取到客户端传过来的信息
+writer.println(msg);//发送消息到客户端
+
+Client
+Socket socket ＝ new Socket("127.0.0.1",8080);
+BufferReader reader = new BufferReader(new InPutStramReader(socket.getInPutStarm()));
+PrintWriter writer = new PrintWriter(socket.getOutPutStram());
+String msg = reader.readline();//获取服务器端传过来的信息
+writer.Println(msg);//发送消息到服务器端
