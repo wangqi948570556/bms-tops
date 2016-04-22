@@ -1,0 +1,71 @@
+1.背景
+  background-color:red;//背景颜色
+  background-position: center ;//背景元素的位置也可以使用百分数(50% 50%)
+  background-repeat: no-repeat;//背景元素重复(repeat-y,repeat-x)
+  background-attachment:fixed;//固定背景元素
+2.文本
+  text-indent: -5em;//5个单位长度 也可以使用百分数(padding-left: 20％;)
+  text-align:center;//控制文本居中
+  word-spacing:30px;//改变字（单词）之间的标准间隔
+  letter-spacing:30;//修改字母间隔修改的是字符或字母之间的间隔
+  text-transform: none;//改变字体(none uppercase(大写) lowercase(小写) capitalize(首字母大写))
+  white-space: normal;//处理空白符
+3.字体
+  font-family: sans-serif;//设置字体类型
+  font-style:normal;// 字体风格(normal - 文本正常显示 italic - 文本斜体显示 oblique - 文本倾斜显示)
+  font-variant:small-caps;//设置字体大小写字母
+  font-weight:bold;//设置字体粗细
+  font-size:60px;//设置字体大小
+4.链接
+<p><b><a href="/index.html" target="_blank">这是一个链接</a></b></p>
+a:link {color:#FF0000;}    /* 未被访问的链接 */
+a:visited {color:#00FF00;} /* 已被访问的链接 */
+a:hover {color:#FF00FF;}   /* 鼠标指针移动到链接上 */
+a:active {color:#0000FF;}  /* 正在被点击的链接 */
+5.列表
+  list-style-type : square;//修改用于列表项的标志类型
+  list-style-image : url(xxx.gif);//对各标志使用一个图像
+  list-style-position
+6.表格
+  border-collapse:collapse;//重合列表
+  border: 1px solid blue;//设置边框线
+  vertical-align:bottom;//设置底部垂直对齐
+7.轮廓
+  outline:#00ff00 dotted thick;//在元素周围划线
+  outline-style:dotted;//设置轮廓的央视
+  outline-color:#00ff00;//设置颜色
+  outline-width:10px;//设置轮廓的宽度
+8.CSS模型
+  padding-top:1px;//内边距(1px,1cm)
+  padding-right:1px;
+  padding-bottom:1px;
+  padding-left:1px;
+  margin-top:1px;//外边距
+  margin-right:1px;
+  margin-bottom:1px;
+  margin-left:1px;
+  border-top-style:solid;//边框类型（none没有边框[默认值]）
+  border-right-style:solid;
+  border-bottom-style:solid;
+  border-left-style:solid;
+  border-top-width:1px;//边框长度
+  border-right-width:1px;
+  border-bottom-width:1px;
+  border-left-width:1px;
+  border-top-color:#00FF22;//边框颜色
+  border-right-color:#00FF22;
+  border-bottom-color:#00FF22;
+  border-left-color:#00FF22;
+9.CSS定位
+  position:relative;//相对定位(移动的元素还会占用原来的位置)自身顶部位置移动
+  position:absolute;//绝对定位(移动的元素不占用之前的位置)以父级为参照移动
+  float: left;// 设置浮动方向
+  clear:both;//清除元素的侧面
+10.CSS选择器
+  元素选择器
+  类选择器
+  ID选择器
+  后代选择器 h1 em
+  子元素选择器 h1 > em
+  相邻选择器 h1 + em 只会选择地二个
+  
