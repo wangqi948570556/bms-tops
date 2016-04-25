@@ -1,3 +1,4 @@
+一.CSS
 1.背景
   background-color:red;//背景颜色
   background-position: center ;//背景元素的位置也可以使用百分数(50% 50%)
@@ -69,3 +70,29 @@ a:active {color:#0000FF;}  /* 正在被点击的链接 */
   子元素选择器 h1 > em
   相邻选择器 h1 + em 只会选择地二个
   
+二.CSS3
+border-radius:20px;//设置边框有圆角
+box-shadow: 10px 10px 5px #888888;//设置阴影及颜色
+border-image:url(/i/border.png) 30 30 round;//设置图片围绕div
+background-size:63px 100px;//设置背景大小
+background-origin:content-box;//设置背景图片可放的位置(content-box,padding-box,border-box)
+background-image:url(bg_flower.gif),url(bg_flower_2.gif);//设置多重背景
+background-clip:border-box;//设置背景绘制位置
+1.文本
+text-shadow: 5px 5px 5px #FF0000;//设置文本背景及颜色
+word-wrap:break-word;//强制文本换行
+2D
+transform: translate(50px,100px);//元素侧移x,y坐标
+transform: rotate(30deg);//元素顺时针旋转30度，为负数则逆时针旋转
+transform: scale(2,4);//元素x,y轴会增加指定的宽度和高度
+transform: skew(30deg,20deg);//元素翻转给定的角度，根据给定的水平线（X 轴）和垂直线（Y 轴）
+transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+transform: rotateX(120deg);//围绕x轴旋转
+transform: rotateY(120deg);//围绕Y轴旋转
+div:hover{width:300px;}//鼠标放再指定地方宽度改变
+
+column-count:3;//文本多列显示
+column-gap:40px;//列之间的间隔
+column-rule:3px outset #ff0000;//列的宽度颜色
+div{resize:both;overflow:auto;}//规定div元素可调整大小
+outline-offset:15px;规定边框边缘之外 15 像素处的轮廓c
