@@ -6,7 +6,7 @@ public class MyRunnable implements Runnable {
     public void run(){
 		while(true){
 	        if(this.ticket>0){
-		        System.out.println(Thread.currentThread().getName()+"卖票---->"+(this.ticket--));  
+		        System.out.println(Thread.currentThread().getName()+"    卖票---->"+(this.ticket--));  
 	        }
 	    }
     }

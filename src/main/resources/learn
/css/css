@@ -33,7 +33,7 @@ a:active {color:#0000FF;}  /* 正在被点击的链接 */
   vertical-align:bottom;//设置底部垂直对齐
 7.轮廓
   outline:#00ff00 dotted thick;//在元素周围划线
-  outline-style:dotted;//设置轮廓的央视
+  outline-style:dotted;//设置轮廓的样式
   outline-color:#00ff00;//设置颜色
   outline-width:10px;//设置轮廓的宽度
 8.CSS模型

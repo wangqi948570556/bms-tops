@@ -38,9 +38,7 @@ public class deadLock implements Runnable {
 	public static void main(String[] args) {
 		deadLock td1 = new deadLock(1);  
 		deadLock td2 = new deadLock(2);  
-//        new Thread(td1).start();  
-//        new Thread(td2).start(); 
-		new Thread(td1).run();
-		new Thread(td2).run();
+        new Thread(td1).start();  
+        new Thread(td2).start(); 
 	}
 }

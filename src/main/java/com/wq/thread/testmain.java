@@ -15,7 +15,7 @@ public class testmain {
 		Thread a3 = new Thread(t,"三号");  
 		a1.start();
 		a2.start();
-		a2.join();
+//		a2.join();
 		a3.start();
 	}
 }
