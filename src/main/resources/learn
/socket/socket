@@ -1,6 +1,6 @@
 TCP---传输控制协议,提供的是面向连接、可靠的字节流服务。当客户和服务器彼此交换数据前，
       必须先在双方之间建立一个TCP连接，之后才能传输数据。TCP提供超时重发，丢弃重复数据，
-      检验数据，流量控制等功能，保证数据能从一端传到另一端。 
+      检验数据，流量控制等功能，保证数据能从一端传到另一端。 (最大连接数默认为16384)
 UDP---用户数据报协议，是一个简单的面向数据报的运输层协议。UDP不提供可靠性，
       它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。
       由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快
@@ -19,3 +19,10 @@ BufferReader reader = new BufferReader(new InPutStramReader(socket.getInPutStarm
 PrintWriter writer = new PrintWriter(socket.getOutPutStram());
 String msg = reader.readline();//获取服务器端传过来的信息
 writer.Println(msg);//发送消息到服务器端
+
+
+1）Buffer池，用于集中管控Socket缓冲区，防止内存碎片。 2）SAEA池，用于集中管控Socket，重复利用Socket。 
+2）SAEA池，用于集中管控Socket，重复利用Socket。
+3）SQL池，用于分离网络服务层与数据访问层（SQL的执行效率远远低于网络层执行效率）。 
+4）线程池，用于从线程池中调用空闲线程执行业务逻辑，进一步提高网络层运行效率
+

@@ -1,0 +1,90 @@
+下载redis包解压
+进入redis目录下执行 make 命令安装
+./src/redis-server 启动服务
+./src/redis-cli 进入
+pkill redis-server 关闭服务
+./redis-cli shutdown 关闭
+默认断开 6379
+ping //测试链接是否还存活
+quit//退出链接
+dbsize //返回当前数据库key的数量
+info//获取服务器的信息和统计
+config get dir //实时传储收到的请求
+config get * 
+flushdb//删除当前选择数据库中的所有key
+flushall//删除所有数据库的所有key
+select dbaName //切换数据库名称（0-15）
+redis 127.0.0.1:6379>keys * //查询所有Key
+set keyName value//添加键值
+get keyName //查询键值（getset keyName value 设置key的值的同时，返回key的值）（mget keyName keyName 一次获取多个key的值）
+keys wang* //模糊查询键名称
+exists keyName //判读键是否存在返回结果大于0表示存在
+del keyName //删除键值
+expire keyName 1 //设置key的过期时间（秒）
+presist keyName //取消设置的过期时间
+rendomkey //随机返回改空间的一个key
+type keyName //返回改key值的类型
+strings类型及操作
+setnx keyName 1 value //添加一个键值对设置有效期为1秒（msetnx一次设置多个key的值）
+setrange keyName 5 fang//替换成指定字符串
+mset keyName value keyName value//一次设置多个键值对
+getrange keyName 0 6 //截取指定key的值的子字符串
+incr keyValue //value不是int类型会返回错误信息（默认加1）
+incrby keyValue 3 //加指定值 ，key不存在时候会设置key，并认为原来的value是 0
+decr//value不是int类型会返回错误信息(默认减1)
+decrby//减指定值 ，key不存在时候会设置key，并认为原来的value是 0
+append keyName value //在原来基础上追加字符串
+strlen keyName //去指定key值的长度
+hash类型及操作
+hset hkeyNmae field1 value //设置hash file为指定值，如果不存在，则创建
+hsetnx myhash field "Hello"//设置hash file为指定值，如果存在返回0，不存在则创建
+hmset hkeyName file1 value file2 value //可同时设置多个file的值
+hget hkeyName file //获取指定hash file 的值
+hmget hkeyName file1 file2 //获取多个hash file 的值
+hincrby hkeyName file 2//给指定hash file加指定值（可以为负数）
+hexists hkeyNmae file //判断hash file 是否存在（存在返回1不存在返回0）
+hlen hkeyName //返回指定hash 的file数量
+hdel hkeyName //删除指定hash 的指定file
+hkeys hkeyNmae //返回指定hash的所有file
+hvals hkeyName //返回指定hash的所有值
+hgetall hkeyName //返回指定hash的所有file和值
+list类型及操作
+lpush mylist "world" //在指定list的头部添加字符串元素
+lrange mylist 0 -1 //返回指定list的指定位置的元素
+rpush mylist "wangqi"//在指定list的尾部添加字符串元素
+linsert mylist before "value1" "value2"//在指定list中指定value1后添加value2
+lset mylist index "value"//在指定list中设置指定下标的值
+lrem mylist count "value"//在指定list中删除指定个数value相同的值（count<0时按从头到尾的顺序删count＝0删除全部）
+ltrim mylist 1 -1 //保留指定list中指定范围内的数据（删除索引为0的值）
+lpop mylist //从指定list的头部删除一个元素并返回删除的元素
+rpop mylist //从指定list的尾部删除一个元素并返回删除的元素
+rpoplpush mylist1 mylist2//从list1尾部删除元素并将元素添加到list2的头部，并返回元素
+lindex mylist index //返回指定list指定索引的元素
+llen mylist //返回指定list的长度
+sets类型及操作
+sadd myset "hello"//向指定key中添加元素
+smembers myset //显示myset中所有的元素
+srem myset "value"//删除指定myset的指定value
+spop myset //随机返回mylist中一个值并删除
+srandmember myset //从指定key中随机返回一个元素，不删除
+sdiff myset1 myset2 //返回所有给定key与第一个key的差集
+sdiffstore myset1 myset2//返回所有指定key与第一个key的差集并存入另一个key中
+sinter myset1 myset2 //返回所有指定key的交集
+sinterstore myset1 myset2 //返回所有指定key的交集并存入另一个key中
+sunion myset1 myset2//返回所有指定key的并集
+sunionstore myset1 myset2 //返回所有指定key的并集并存入另一个key中
+smove myset1 myset2//从第一个key中移除指定value并存入第二个key中
+scard myset //返回指定key的元素个数
+sismember myset value //判断value是否为指定key中的值（如果是则返回1，否则返回0）
+sorted sets类型及操作
+zadd myzset index "value"//向指定key指定索引添加value(以最后一次添加索引及value为准)
+zrange myzset 0 -1 withscores//显示元素的score
+zrem myzset value //删除指定key中的指定元素
+zincrby myzset count "value" //增加指定指定key指定value的score增加count
+zrank myzset "value"//取指定值的下标（从0开始）
+zrevrange myzset 0 -1 withscores //返回指定key的所有元素按score从大到小排序
+zrangebyscore mzset 0 1 withscores //返回指定key指定范围的score的元素
+zcount myzset 0 3 //返回指定key的指定范围的score的元素数量
+zcard myzset //返回指定key的元素个数
+zscore myzset value //返回指定key的指定value的score
+ zremrangebyscore myzset 1 2//删除指定key指定score范围的元素
