@@ -24,44 +24,44 @@ expire keyName 1 //设置key的过期时间（秒）
 presist keyName //取消设置的过期时间
 rendomkey //随机返回改空间的一个key
 type keyName //返回改key值的类型
-strings类型及操作
-setnx keyName 1 value //添加一个键值对设置有效期为1秒（msetnx一次设置多个key的值）
-setrange keyName 5 fang//替换成指定字符串
-mset keyName value keyName value//一次设置多个键值对
-getrange keyName 0 6 //截取指定key的值的子字符串
-incr keyValue //value不是int类型会返回错误信息（默认加1）
-incrby keyValue 3 //加指定值 ，key不存在时候会设置key，并认为原来的value是 0
-decr//value不是int类型会返回错误信息(默认减1)
+5种数据类型:字符串、哈希、链表、集合、有序集合。
+(1.String类型 2.List类型 3.Set类型 4.ZSet(Sorted Set)类型 5.hash类型)
+1.strings类型及操作
+--setnx keyName 1 value //添加一个键值对设置有效期为1秒（msetnx一次设置多个key的值）
+--setrange keyName 5 fang//替换成指定字符串
+--mset keyName value keyName value//一次设置多个键值对
+--getrange keyName 0 6 //截取指定key的值的子字符串
+--incr keyValue //value不是int类型会返回错误信息（默认加1）
+--incrby keyValue 3 //加指定值 ，key不存在时候会设置key，并认为原来的value是 0
+--decr//value不是int类型会返回错误信息(默认减1)
 decrby//减指定值 ，key不存在时候会设置key，并认为原来的value是 0
 append keyName value //在原来基础上追加字符串
-strlen keyName //去指定key值的长度
-hash类型及操作
-hset hkeyNmae field1 value //设置hash file为指定值，如果不存在，则创建
+--strlen keyName //去指定key值的长度
+2.hash类型及操作
+--hset myhash field1 value //设置hash file为指定值，如果不存在，则创建(hmset myhash file1 value file2 value //可同时设置多个file的值)
 hsetnx myhash field "Hello"//设置hash file为指定值，如果存在返回0，不存在则创建
-hmset hkeyName file1 value file2 value //可同时设置多个file的值
-hget hkeyName file //获取指定hash file 的值
-hmget hkeyName file1 file2 //获取多个hash file 的值
-hincrby hkeyName file 2//给指定hash file加指定值（可以为负数）
-hexists hkeyNmae file //判断hash file 是否存在（存在返回1不存在返回0）
-hlen hkeyName //返回指定hash 的file数量
-hdel hkeyName //删除指定hash 的指定file
-hkeys hkeyNmae //返回指定hash的所有file
-hvals hkeyName //返回指定hash的所有值
-hgetall hkeyName //返回指定hash的所有file和值
-list类型及操作
+--hget myhash file //获取指定hash file 的值(hmget myhash file1 file2 //获取多个hash file 的值)
+hincrby myhash file 2//给指定hash file加指定值（可以为负数）
+hexists myhash file //判断hash file 是否存在（存在返回1不存在返回0）
+--hlen myhash //返回指定hash 的file数量
+--hdel myhash //删除指定hash 的指定file
+hkeys myhash //返回指定hash的所有file
+hvals myhash //返回指定hash的所有值
+hgetall myhash //返回指定hash的所有file和值
+3.list类型及操作
 lpush mylist "world" //在指定list的头部添加字符串元素
-lrange mylist 0 -1 //返回指定list的指定位置的元素
 rpush mylist "wangqi"//在指定list的尾部添加字符串元素
+--lrange mylist 0 -1 //返回指定list的指定位置的元素
 linsert mylist before "value1" "value2"//在指定list中指定value1后添加value2
-lset mylist index "value"//在指定list中设置指定下标的值
+--lset mylist index "value"//在指定list中设置指定下标的值
 lrem mylist count "value"//在指定list中删除指定个数value相同的值（count<0时按从头到尾的顺序删count＝0删除全部）
 ltrim mylist 1 -1 //保留指定list中指定范围内的数据（删除索引为0的值）
 lpop mylist //从指定list的头部删除一个元素并返回删除的元素
 rpop mylist //从指定list的尾部删除一个元素并返回删除的元素
 rpoplpush mylist1 mylist2//从list1尾部删除元素并将元素添加到list2的头部，并返回元素
 lindex mylist index //返回指定list指定索引的元素
-llen mylist //返回指定list的长度
-sets类型及操作
+--llen mylist //返回指定list的长度
+4.set类型及操作
 sadd myset "hello"//向指定key中添加元素
 smembers myset //显示myset中所有的元素
 srem myset "value"//删除指定myset的指定value
@@ -76,7 +76,7 @@ sunionstore myset1 myset2 //返回所有指定key的并集并存入另一个key�
 smove myset1 myset2//从第一个key中移除指定value并存入第二个key中
 scard myset //返回指定key的元素个数
 sismember myset value //判断value是否为指定key中的值（如果是则返回1，否则返回0）
-sorted sets类型及操作
+5.sorted sets类型及操作
 zadd myzset index "value"//向指定key指定索引添加value(以最后一次添加索引及value为准)
 zrange myzset 0 -1 withscores//显示元素的score
 zrem myzset value //删除指定key中的指定元素
@@ -87,4 +87,4 @@ zrangebyscore mzset 0 1 withscores //返回指定key指定范围的score的元�
 zcount myzset 0 3 //返回指定key的指定范围的score的元素数量
 zcard myzset //返回指定key的元素个数
 zscore myzset value //返回指定key的指定value的score
- zremrangebyscore myzset 1 2//删除指定key指定score范围的元素
+zremrangebyscore myzset 1 2//删除指定key指定score范围的元素

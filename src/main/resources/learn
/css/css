@@ -24,7 +24,11 @@ a:visited {color:#00FF00;} /* 已被访问的链接 */
 a:hover {color:#FF00FF;}   /* 鼠标指针移动到链接上 */
 a:active {color:#0000FF;}  /* 正在被点击的链接 */
 5.列表
-  list-style-type : square;//修改用于列表项的标志类型
+  <ul>
+    <li></li>
+    <li></li>
+  </ul>
+  list-style-type : square;//修改用于列表项的标志类型(disc黑圆点 circle空白圆点 square方块黑圆点 none没有)
   list-style-image : url(xxx.gif);//对各标志使用一个图像
   list-style-position
 6.表格

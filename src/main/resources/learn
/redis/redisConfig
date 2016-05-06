@@ -1,0 +1,44 @@
+redis 内存数据集大小上升到一定大小的时候，就会施行数据淘汰策略。redis 提供 6种数据淘汰策略：
+volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰
+volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰
+volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰
+allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰
+allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰
+no-enviction（驱逐）：禁止驱逐数据
+配置
+daemonize    如果需要在后台运行,把该项改为yes  
+pidfile      配置多个pid的地址 默认在/var/run/redis.pid
+bind 绑定ip,设置后只接受来自该ip的请求
+port 监听端口,默认为6379
+timeout      设置客户端连接时的超时时间,单位为秒
+loglevel     分为4级,debug、verbose、notice、warning
+logfile      配置log文件地址
+databases    设置数据库的个数,默认使用的数据库为0
+save         设置redis进行数据库镜像的频率( 900 1 #900秒内如果超过1个key被修改,则发起快照保存)
+rdbcompression    在进行镜像备份时,是否进行压缩
+Dbfilename        镜像备份文件的文件名
+Dir   数据库镜像备份的文件放置路径
+Slaveof     设置数据库为其他数据库的从数据库
+Masterauth 主数据库连接需要的密码验证
+Requirepass     设置登录时需要使用的密码
+Maxclients 限制同时连接的客户数量
+Maxmemory 设置redis能够使用的最大内存
+Appendonly 开启append only模式
+备份方式
+Redis AOF(快照)
+save 900 1 #900秒内如果超过1个key被修改,则发起快照保存 按save的方式保存，如果出现crash 会丢失部分数据
+设置 appendonly yes追加方式的日志以aof结尾（aof文件）
+设置  appendfsync no/always/everysec
+     1.no:表示等操作系统进行数据缓存同步到磁盘.
+     2.always:表示每次更新操作后手动调用fsync() 将数据写到磁盘.
+     3.everysec:表示每秒同步一次.一般用everysec
+redis缓存工具类
+ValueOperations　　——基本数据类型和实体类的缓存
+ListOperations　　   ——list的缓存
+SetOperations　　  ——set的缓存
+HashOperations　　Map的缓存
+    
+     
+     
+     
+     

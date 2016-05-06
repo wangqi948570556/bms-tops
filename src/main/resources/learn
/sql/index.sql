@@ -5,7 +5,7 @@
 2.普通索引和唯一性索引
     普通索引：CREATE INDEX mycolumn_index ON mytable (myclumn)
     唯一性索引：保证在索引列中的全部数据是唯一的，对聚簇索引和非聚簇索引都可以使用
-    CREATE UNIQUE COUSTERED INDEX myclumn_cindex ON mytable(mycolumn)
+    CREATE UNIQUE INDEX myclumn_cindex ON mytable(mycolumn)
 3.单个索引和复合索引
     单个索引：即非复合索引
     复合索引：又叫组合索引，在索引建立语句中同时包含多个字段名，最多16个字段
