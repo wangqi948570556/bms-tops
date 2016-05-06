@@ -21,6 +21,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- Spring MVC -->
     <dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-core</artifactId>
@@ -36,6 +37,7 @@
 		<artifactId>spring-test</artifactId>
 		<version>${spring.version}</version>
 	</dependency>
+	<!-- Mybatis -->
 	<dependency>
 		<groupId>org.mybatis</groupId>
 		<artifactId>mybatis</artifactId>
@@ -46,6 +48,7 @@
 		<artifactId>mybatis-spring</artifactId>
 		<version>${mybatisspring.version}</version>
 	</dependency>
+	<!-- Oracle -->
    <dependency>
 		<groupId>com.oracle</groupId>
 		<artifactId>ojdbc6</artifactId>
