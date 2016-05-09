@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 public class RedisCacheUtil<T> {
 
     public RedisTemplate redisTemplate;
-    
     /**
      * 缓存基本的对象，Integer、String、实体类等
      * @param key 缓存的键值
@@ -27,8 +26,8 @@ public class RedisCacheUtil<T> {
      */
     public <T> ValueOperations<String,T> setCacheObject(String key,T value)
     {
-      
-     ValueOperations<String,T> operation = redisTemplate.opsForValue(); 
+     ValueOperations<String,T> operation = redisTemplate.opsForValue();
+     System.out.println("fdsafds");
      operation.set(key,value);
      return operation;
     }

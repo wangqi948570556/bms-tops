@@ -9,5 +9,6 @@ public class testGetCache {
     	Jedis.isConnected();
     	RedisCacheUtil a = new RedisCacheUtil();
     	a.setCacheObject("wangqi", 2);
+    	Jedis.set("wangqi", "34");
     }
 }
