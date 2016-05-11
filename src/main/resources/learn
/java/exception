@@ -1,0 +1,5 @@
+1. Java.lang.NullPointerException 空指针
+2. java.lang.ClassNotFoundException 找不到类
+3. java.lang.ArithmeticException 数学运算错误 如除数为0
+4. java.lang.ArrayIndexOutOfBoundsException 索引越界
+5. java.lang.IllegalArgumentException 方法参数错误
