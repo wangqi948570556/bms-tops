@@ -1,0 +1,23 @@
+Cookie 客户端保存状态
+1.cookie的内容主要包括：名字，值，过期时间，路径和域；（若不设置过期时间，则cookie以浏览器会话期间，关闭浏览器窗口cookie消失）
+2.cookie不安全，可以通过分析本地cookie进行cookieIE欺骗
+3.单个cookie保存的数据不超过4K,多数浏览器限制最大保存20个
+cookie操作
+1.document.cookie ='key:info;key:info';    // 赋值  多个属性使用 ' ; '分割；
+2、设置cookie超时；
+expires //属性设置cookie过期时间；放在cookie设置最后如下；
+var date = new Date ( ) ;
+date.setTime(date.getTime ( ) + 365*24*3600*1000);cookie 在 365天后超时；
+document . cookie = ‘ key : info ; key : info ; expires =' + date . toGMTString ( ) ;
+3.设置过期时间  date.setTime(date.getTime ( )- 1000) ;当前时间往前减一点
+
+
+Session 服务器端保存状态
+1.在一定时间内保存在服务器上，当访问增多，占用内存越多，影响性能
+2.登录信息保存在session中（安全级别要求较高的保存在session中）
+session操作
+HttpSession session = request.getSession();//获取session
+session.setAttribute("key", value);//向session中保存值
+session.getAttribute("key");//获取session中指定key的值
+session.removeAttribute("key"); //移除session中指定key的值
+session.invalidate(); //删除所有session中保存的键

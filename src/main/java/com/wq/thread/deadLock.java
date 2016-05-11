@@ -8,9 +8,9 @@ public class deadLock implements Runnable {
     	this.flag = flag;
     }
     @Override  
-    public void run() {  
-        System.out.println("我进来了" + flag);  
-        if (flag == 1) {  
+    public void run() {
+        System.out.println("我进来了" + flag);
+        if (flag == 1) {
             synchronized (o1) {  
                 try {  
                     Thread.sleep(1000);  
