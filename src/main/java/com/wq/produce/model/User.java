@@ -1,5 +1,8 @@
 package com.wq.produce.model;
 
+@SuppressWarnings("serial")
+//@Entit
+//@Table(name = "USERS")
 public class User {
     private String id;
 

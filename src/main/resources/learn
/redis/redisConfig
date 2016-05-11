@@ -37,8 +37,17 @@ ValueOperations　　——基本数据类型和实体类的缓存
 ListOperations　　   ——list的缓存
 SetOperations　　  ——set的缓存
 HashOperations　　Map的缓存
-    
-     
-     
-     
-     
+
+RDB可以保存某个时间段的数据 保存RDB文件时父进程会fork一个子进程来操作，提升redis的性能，恢复大数据集更快
+（可能会丢失几分钟内的数据）
+AOF可以使用不同的fsync策略，默认每秒fsync策略,以追加日志文件的方式，出现问题可用redis-check-aof工具修复
+（文件越来越大，影响性能）
+
+sentinel(哨兵) 
+
+
+
+
+
+
+

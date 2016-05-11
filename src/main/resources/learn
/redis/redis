@@ -88,3 +88,16 @@ zcount myzset 0 3 //返回指定key的指定范围的score的元素数量
 zcard myzset //返回指定key的元素个数
 zscore myzset value //返回指定key的指定value的score
 zremrangebyscore myzset 1 2//删除指定key指定score范围的元素
+
+MULTI
+set wangqi 123
+exec //事物执行
+discard //放弃事物
+watch wangqi //乐观锁（可以监听多个keyName）
+ 
+ 
+ 
+ 
+ 
+ 
+ 

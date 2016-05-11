@@ -8,6 +8,6 @@
     <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
   </resultMap>
   <select id="getAll" resultMap="BaseResultMap">
-	select ID, NAME, AGE, ADDRESS from muser
+    select ID, NAME, AGE, ADDRESS from muser
   </select>
 </mapper>

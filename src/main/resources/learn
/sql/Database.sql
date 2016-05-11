@@ -28,6 +28,7 @@ when Not MATCHED then
  alter table tableName rename column oldNmae to newName;--修改列名
  ALTER TABLE oldTableName RENAME TO newTableName;--修改表名
  alter table tableName add constraint columnName primary key(主键名);
+ ALTER TABLE tableName DROP CONSTRAINT 主键名
  rename oldTablename to newTableName;--修改表名
  --通过闪回查询到对应时间删除的数据并创建一张表保存
  create table bms_set_of_books_relation1 as ;

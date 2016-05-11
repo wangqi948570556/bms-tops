@@ -20,56 +20,56 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class serviceController {
-	//调用日志文件
-	private static Log logger = LogFactory.getLog(serviceController.class);
-	
-	@RequestMapping(value = "test" , method = RequestMethod.GET)
-	@ResponseBody
-	public ModelAndView getInfoJsp(
+    //调用日志文件
+    private static Log logger = LogFactory.getLog(serviceController.class);
+    
+    @RequestMapping(value = "test" , method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView getInfoJsp(
             @RequestParam(value = "scope", required = false) String scope,
             HttpServletRequest request, HttpServletResponse response){
-		ModelAndView mv = new ModelAndView();
-		try {
-			System.out.println("hehehhehehh");
-			List<Map<String,Object>> modes = new ArrayList<Map<String,Object>>();
-			for(int i=0;i<3;i++){
-				Map<String, Object> map = new HashMap<String, Object>();
-				map.put("obj", "我不知奥"+i);
-				modes.add(map);
-			}
-			mv.addObject("modes",modes);
-			mv.addObject("name","我啊啊");
-			mv.setViewName("imagRotation");
-		} catch (Exception e) {
-			e.printStackTrace();
-			logger.error("Find projectCategories failed.", e);
-		}
-		return mv;
-	}
-	
-	@RequestMapping(value = "getInfo" , method = RequestMethod.GET)
-	@ResponseBody
-	public ModelAndView getInfoString(
+        ModelAndView mv = new ModelAndView();
+        try {
+            System.out.println("hehehhehehh");
+            List<Map<String,Object>> modes = new ArrayList<Map<String,Object>>();
+            for(int i=0;i<3;i++){
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("obj", "我不知奥"+i);
+                modes.add(map);
+            }
+            mv.addObject("modes",modes);
+            mv.addObject("name","我啊啊");
+            mv.setViewName("imagRotation");
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("Find projectCategories failed.", e);
+        }
+        return mv;
+    }
+    
+    @RequestMapping(value = "getInfo" , method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView getInfoString(
             @RequestParam(value = "scope", required = false) String scope,
             Model model,
             HttpServletRequest request){
-		ModelAndView mv = new ModelAndView();
-		try {
-			scope = new String(scope.getBytes("ISO-8859-1"), "UTF-8"); 
-			System.out.println(scope);
-			List<Map<String,Object>> modes = new ArrayList<Map<String,Object>>();
-			for(int i=0;i<3;i++){
-				Map<String, Object> map = new HashMap<String, Object>();
-				map.put("obj", "我不知奥"+i);
-				modes.add(map);
-			}
-//			model.addAttribute("modes",modes);
-			mv.addObject("modes",modes);
-			mv.setViewName("index");
-		} catch (Exception e) {
-			e.printStackTrace();
-			logger.error("Find projectCategories failed.", e);
-		}
-		return mv;
-	}
+        ModelAndView mv = new ModelAndView();
+        try {
+            scope = new String(scope.getBytes("ISO-8859-1"), "UTF-8"); 
+            System.out.println(scope);
+            List<Map<String,Object>> modes = new ArrayList<Map<String,Object>>();
+            for(int i=0;i<3;i++){
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("obj", "我不知奥"+i);
+                modes.add(map);
+            }
+//            model.addAttribute("modes",modes);
+            mv.addObject("modes",modes);
+            mv.setViewName("index");
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("Find projectCategories failed.", e);
+        }
+        return mv;
+    }
 }
