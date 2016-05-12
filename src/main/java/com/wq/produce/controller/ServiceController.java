@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class serviceController {
+public class ServiceController {
     //调用日志文件
-    private static Log logger = LogFactory.getLog(serviceController.class);
+    private static Log logger = LogFactory.getLog(ServiceController.class);
     
     @RequestMapping(value = "test" , method = RequestMethod.GET)
     @ResponseBody
@@ -56,16 +56,7 @@ public class serviceController {
         ModelAndView mv = new ModelAndView();
         try {
             scope = new String(scope.getBytes("ISO-8859-1"), "UTF-8"); 
-            System.out.println(scope);
-            List<Map<String,Object>> modes = new ArrayList<Map<String,Object>>();
-            for(int i=0;i<3;i++){
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put("obj", "我不知奥"+i);
-                modes.add(map);
-            }
-//            model.addAttribute("modes",modes);
-            mv.addObject("modes",modes);
-            mv.setViewName("index");
+            
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("Find projectCategories failed.", e);

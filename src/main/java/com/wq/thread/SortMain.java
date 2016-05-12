@@ -9,15 +9,15 @@ public class SortMain {
 		int[] a = {1,6,3,8,4,5,9};
 //		selectSort(a);
 //		insertSort(a);
-//		bubbleSort(a);
-//		for(int k=0;k<a.length;k++){
-//			System.out.println(a[k]);
-//		}
-		fanse();
+		bubbleSort(a);
+		for(int k=0;k<a.length;k++){
+			System.out.println(a[k]);
+		}
+//		fanse();
 	}
 	//反射
 	public static void fanse(){
-		String s = JOptionPane.showInputDialog(null, "com.wq.produce.model.User");
+		String s = JOptionPane.showInputDialog("com.wq.produce.model.User", "com.wq.produce.model.User");
 		try {
 			Class<?> cla = Class.forName(s);
 			Method[] ms = cla.getDeclaredMethods();
@@ -26,7 +26,7 @@ public class SortMain {
 				System.out.println(cla.getPackage());
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 	//冒泡排序
@@ -34,7 +34,7 @@ public class SortMain {
 		int temp;
 		for(int i=0;i<a.length;i++){
 			for(int j=0;j<a.length-i-1;j++){
-				if(a[j]<a[j+1]){
+				if(a[j]>a[j+1]){
 					temp=a[j];
 					a[j]=a[j+1];
 					a[j+1]=temp;
