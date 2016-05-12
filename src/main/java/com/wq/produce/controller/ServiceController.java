@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +19,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.wq.produce.model.User;
+import com.wq.produce.service.intenel.DefultUserManage;
+
 @Controller
 public class ServiceController {
     //调用日志文件
     private static Log logger = LogFactory.getLog(ServiceController.class);
+    
+    @Autowired
+    private DefultUserManage defultUserManage;
+    
     
     @RequestMapping(value = "test" , method = RequestMethod.GET)
     @ResponseBody
@@ -56,7 +64,7 @@ public class ServiceController {
         ModelAndView mv = new ModelAndView();
         try {
             scope = new String(scope.getBytes("ISO-8859-1"), "UTF-8"); 
-            
+            List<User> users = defultUserManage.getUsers();
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("Find projectCategories failed.", e);

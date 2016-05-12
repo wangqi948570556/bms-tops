@@ -1,5 +1,10 @@
 package com.wq.produce.service;
 
-public class UserManage {
+import java.util.List;
 
+import com.wq.produce.model.User;
+
+public interface UserManage {
+
+    List<User> getUsers();
 }
