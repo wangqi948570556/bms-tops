@@ -65,6 +65,7 @@ public class ServiceController {
         try {
             scope = new String(scope.getBytes("ISO-8859-1"), "UTF-8"); 
             List<User> users = defultUserManage.getUsers();
+            mv.addObject(users);
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("Find projectCategories failed.", e);
