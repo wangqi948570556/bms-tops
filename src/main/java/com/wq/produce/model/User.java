@@ -1,5 +1,7 @@
 package com.wq.produce.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +14,7 @@ import org.hibernate.annotations.Parameter;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "USERS")
-public class User {
+public class User implements Serializable{
     
     @Id
     @GeneratedValue(generator = "sequenceStyleGenerator")
