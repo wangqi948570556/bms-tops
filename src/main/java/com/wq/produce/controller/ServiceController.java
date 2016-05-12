@@ -38,6 +38,7 @@ public class ServiceController {
             HttpServletRequest request, HttpServletResponse response){
         ModelAndView mv = new ModelAndView();
         try {
+//            int a = 1/0;
             System.out.println("hehehhehehh");
             List<Map<String,Object>> modes = new ArrayList<Map<String,Object>>();
             for(int i=0;i<3;i++){

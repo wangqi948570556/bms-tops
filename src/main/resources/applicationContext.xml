@@ -9,29 +9,29 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 ">
 
     <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <property name="url" value="${jdbc_url}" />
-        <property name="username" value="${jdbc_username}" />
-        <property name="password" value="${jdbc_password}" />
-    
-        <property name="initialSize" value="0" />        
-        <property name="maxActive" value="20" />    
-        <property name="maxIdle" value="20" />
-        <property name="minIdle" value="0" />        
-        <property name="maxWait" value="60000" />
-        
-        <property name="validationQuery" value="${validationQuery}" />
-        <property name="testOnBorrow" value="false" />
+        <property name="driverClassName" value="${soupe.persistence.driver}"/>
+        <property name="url" value="${soupe.persistence.url}"/>
+        <property name="username" value="${soupe.persistence.username}"/>
+        <property name="password" value="${soupe.persistence.password}"/>
+        <property name="defaultAutoCommit" value="false"/>
+        <property name="initialSize" value="${soupe.persistence.pool.minSize}"/>
+        <property name="minIdle" value="${soupe.persistence.pool.minSize}"/>
+        <property name="maxActive" value="${soupe.persistence.pool.maxSize}"/>
+        <property name="maxIdle" value="${soupe.persistence.pool.maxSize}"/>
+        <property name="maxWait" value="${soupe.persistence.pool.blockingTimeout}"/>
+        <property name="validationQuery" value="${soupe.persistence.pool.validationQuery}"/>
+        <property name="logAbandoned" value="true"/>
+        <property name="testOnBorrow" value="true"/>
         <property name="testOnReturn" value="false" />
         <property name="testWhileIdle" value="true" />
         <property name="timeBetweenEvictionRunsMillis" value="60000" />
         <property name="minEvictableIdleTimeMillis" value="25200000" />
         <property name="removeAbandoned" value="true" />
         <property name="removeAbandonedTimeout" value="1800" />
-        <property name="logAbandoned" value="true" />
         <property name="filters" value="mergeStat" />
     </bean>
     
-    <!-- 生成ibatis 映射xml文件 -->
+    <!-- 生成ibatis 映射xml文件  classpath:sqlmap-config.xml-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="mapperLocations" value="classpath:sqlmap-user-oracle.xml" />

@@ -14,8 +14,8 @@ import com.wq.produce.service.UserManage;
 @Transactional(readOnly = true)
 public class DefultUserManage implements UserManage {
 
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private UserRepository userRepository;
     
     @Override
     public List<User> getUsers() {

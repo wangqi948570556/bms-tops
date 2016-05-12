@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+        "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+
+    <!-- NOTE: do not set defaultStatementTimeout because it will override the settings on the DataSource -->
+    <settings useStatementNamespaces="true" classInfoCacheEnabled="true" statementCachingEnabled="true"/>
+
+    <sqlMap resource="sqlmap-user-oracle.xml"/>
+
+</sqlMapConfig>
