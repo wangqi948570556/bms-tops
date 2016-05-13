@@ -12,6 +12,7 @@ LinkedList queue = new LinkedList(); 
   //可实现先进先出队列
 List<String> c = new ArrayList<String>();
   c.add("c"); c.add("b");
+  Arrays.asList(new String[])//把数组转换成list类型
 ListIterator iter = c.listIterator(c.size());
   while(iter.hasPrevious()){
       System.out.println(iter.previous());//向上
@@ -23,7 +24,7 @@ ListIterator iter = c.listIterator(c.size());
 
 Set 只能通过游标来取值，并且值是不能重复的 
 ArrayList ， Vector ， LinkedList 是 List 的实现类 
-ArrayList大小可变 线程非安全
+ArrayList 大小可变 线程非安全
 vector 
 ArrayList 是线程不安全的， Vector 是线程安全的，这两个类底层都是由数组实现的 
 LinkedList 是线程不安全的，底层是由链表实现的  
@@ -31,4 +32,8 @@ Map 是键值对集合
 HashTable 和 HashMap 是 Map 的实现类  
 HashTable 是线程安全的，不能存储 null 值  
 HashMap 不是线程安全的，可以存储 null 值
+
+Collections.sort(list);//从小到大排序
+Collections.sort(listCat1, Collections.reverseOrder());//从大到小排序
+
 
