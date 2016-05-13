@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.wq.produce.jpa.UserRepository;
+import com.wq.produce.jdbc.intenel.DefaultUserDataJdbcRepository;
 import com.wq.produce.model.User;
 import com.wq.produce.service.UserManage;
 
@@ -17,10 +17,12 @@ public class DefultUserManage implements UserManage {
 //    @Autowired
 //    private UserRepository userRepository;
     
+    @Autowired
+    private DefaultUserDataJdbcRepository userDataJdbcRepository;
+  
     @Override
     public List<User> getUsers() {
-//        userRepository.findAll();
-        return null;
+        return userDataJdbcRepository.getUsers();
     }
 
 }

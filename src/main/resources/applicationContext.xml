@@ -42,7 +42,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
     </bean>
     <!-- 加载数据源对象的属性资源文件 -->
     <bean id="placeHolder" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
-        <property name="location" value="classpath:/config/config.properties"/>
+        <property name="location" value="classpath:/META-INF/config.properties"/>
     </bean>
     <!-- 拦截事物配置 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

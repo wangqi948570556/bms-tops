@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="rml.dao.MUserMapper" >
-  <resultMap id="BaseResultMap" type="com.wq.produce.model.User" >
+<mapper namespace="BMS.USER">
+    
+<!--    <typeAlias alias="user"  type="com.wq.produce.model.User"/> -->
+  
+  <resultMap id="userResultMap" type="com.wq.produce.model.User" >
     <id column="ID" property="id" jdbcType="VARCHAR" />
     <result column="NAME" property="name" jdbcType="VARCHAR" />
-    <result column="AGE" property="age" jdbcType="DECIMAL" />
-    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
   </resultMap>
-  <select id="getAll" resultMap="BaseResultMap">
-    select ID, NAME, AGE, ADDRESS from muser
+  <select id="getAll" resultMap="userResultMap">
+    select ID, NAME, sex from muser
   </select>
 </mapper>
