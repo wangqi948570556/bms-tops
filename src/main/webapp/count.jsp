@@ -11,7 +11,7 @@ pageEncoding="UTF-8"%>
 //判断application对象中有没有保存名为count的参数 
 //如果没有，在application对象中新增一个名为count的参数 
 if(application.getAttribute("count")==null){ 
-application.setAttribute("count", new Integer(0)); 
+application.setAttribute("count", new Integer(0));
 } 
 Integer count = (Integer)application.getAttribute("count"); 
 //使用application对象读取count参数的值，再在原值基础上累加1 

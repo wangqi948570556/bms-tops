@@ -8,7 +8,8 @@ cookie操作
 expires //属性设置cookie过期时间；放在cookie设置最后如下；
 var date = new Date ( ) ;
 date.setTime(date.getTime ( ) + 365*24*3600*1000);cookie 在 365天后超时；
-document . cookie = ‘ key : info ; key : info ; expires =' + date . toGMTString ( ) ;
+document.coolie = 'key:info';expire = 1;
+document.cookie = ‘ key : info ; key : info ; expires =' + date . toGMTString ( ) ;
 3.设置过期时间  date.setTime(date.getTime ( )- 1000) ;当前时间往前减一点
 
 
@@ -21,3 +22,26 @@ session.setAttribute("key", value);//向session中保存值
 session.getAttribute("key");//获取session中指定key的值
 session.removeAttribute("key"); //移除session中指定key的值
 session.invalidate(); //删除所有session中保存的键
+session.setMaxInactiveInterval(900); //设置session过期时间
+
+servlet作用域
+1.request在每次请求到达服务器端时都会产生一个对象;
+2.session(会话)作用域
+3.ServletContext()应用程序上下文对象
+
+JSP中九大内置对象为：
+1.request 请求对象　 类型 javax.servlet.ServletRequest 作用域 Request
+2.response 响应对象 类型 javax.servlet.SrvletResponse 作用域 Page
+3.pageContext 页面上下文对象 类型 javax.servlet.jsp.PageContext 作用域 Page
+4.session 会话对象 类型 javax.servlet.http.HttpSession 作用域 Session
+5.application 应用程序对象 类型 javax.servlet.ServletContext 作用域 Application
+6.out 输出对象 类型 javax.servlet.jsp.JspWriter 作用域 Page
+7.config 配置对象 类型 javax.servlet.ServletConfig 作用域 Page
+8.page 页面对象 类型 javax.lang.Object 作用域 Page
+9.exception 例外对象 类型 javax.lang.Throwable 作用域 page
+
+
+
+
+
+

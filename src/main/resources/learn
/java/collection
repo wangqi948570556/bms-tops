@@ -24,8 +24,7 @@ ListIterator iter = c.listIterator(c.size());
 
 Set 只能通过游标来取值，并且值是不能重复的 
 ArrayList ， Vector ， LinkedList 是 List 的实现类 
-ArrayList 大小可变 线程非安全
-vector 
+ArrayList 大小可变 线程非安全 
 ArrayList 是线程不安全的， Vector 是线程安全的，这两个类底层都是由数组实现的 
 LinkedList 是线程不安全的，底层是由链表实现的  
 Map 是键值对集合 
