@@ -1,0 +1,17 @@
+1.调整tomcat的占用内存
+  找到tomcat bin目录下,catelina.sh文件 设置JAVA_OPTS="-Xms 1024m –Xmx 1520m"
+   - Xms为tomcat启动初始内存，一般为服务器开机后可用空闲内存减去100M
+   - Xmx为tomcat最大占用内存，一般为服务器开机后可用空闲内存减去50M
+   
+2.如何调整tomcat的线程参数
+  找到tomcat conf目录下，server.xml文件，设置：
+    <Connector port="8080"
+        maxThreads="150"
+        minSpareThreads="25"
+        maxSpareThreads="75"
+        acceptCount="100"/>
+  maxThreads="150"     表示最多同时处理150个连接(默认200个)
+  minSpareThreads="25"     表示即使没有人使用也开这么多空线程等待
+  maxSpareThreads="75"     表示如果最多可以空75个线程
+  acceptCount="100"   当同时连接的人数达到maxThreads时，还可以接收排队的连接数量，超过这个连接的则直接返回拒绝连接。
+  connnectionTimeout＝ 21 网络链接超时

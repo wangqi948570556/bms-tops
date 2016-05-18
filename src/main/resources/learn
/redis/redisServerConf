@@ -1,0 +1,26 @@
+一.redis主从配置
+主:192.168.1.130 port:6379
+从:10.0.2.15 port:6379
+修改从服务器的配置port:6380 slaveof: 192.168.1.130 6379
+启动主服务器：./src/redis-server 客户端：./src/redis-cli
+启动从服务器：src/redis-server redis-conf 客户端: src/redis-cli -p 6380(修改后的端口)
+二.主从切换
+停止主redis：./src/redis-cli -n 6379 shutdown
+将从redis设置为主redis：./src/redis-cli -p 6380 slaveof NO ONE(现在之前的从redis变成主的redis，并且可以操作数据)
+
+三.恢复原来的主redis
+[root@localhost redis-2.8.3]# src/redis-cli -p 6380
+     127.0.0.1:6380> set name 123
+     OK
+     127.0.0.1:6380> get name
+     "123"
+     127.0.0.1:6380> save
+     OK
+     127.0.0.1:6380>
+1.将数据保存 save命令
+2.将现在的主redis根目录下dump.rdb文件拷贝覆盖到原来主redis的根目录
+3.启动原来的主redis
+4.在现在的主redis中切换
+      [root@localhost redis-2.8.3]# src/redis-cli -p 6380 slaveof 192.168.10.1 6379
+      
+killall -9 redis-server//杀死redis服务进程

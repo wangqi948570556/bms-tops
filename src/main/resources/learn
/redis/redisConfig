@@ -43,7 +43,8 @@ RDB可以保存某个时间段的数据 保存RDB文件时父进程会fork一个
 AOF可以使用不同的fsync策略，默认每秒fsync策略,以追加日志文件的方式，出现问题可用redis-check-aof工具修复
 （文件越来越大，影响性能）
 
-sentinel(哨兵) 
+sentinel(哨兵)
+
 
 
 

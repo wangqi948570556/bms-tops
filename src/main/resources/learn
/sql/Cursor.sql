@@ -19,7 +19,7 @@ SQL%NOTFOUND 布尔型 与SQL%FOUND属性返回值相反
 SQL%ISOPEN 布尔型 DML执行过程中为真，结束后为假 
 3) 隐式Cursor是系统自动打开和关闭Cursor.
 
-2．	显式Cursor： 
+2．	显式Cursor：
 （1）	对于从数据库中提取多行数据，就需要使用显式Cursor。显式Cursor的属性包含： 
 游标的属性   返回值类型   意    义  
 %ROWCOUNT   整型  获得FETCH语句返回的数据行数  
