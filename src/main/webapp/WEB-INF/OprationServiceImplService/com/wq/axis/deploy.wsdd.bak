@@ -1,0 +1,32 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from OprationServiceImplService WSDL service -->
+
+  <service name="OprationServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://axis.wq.com"/>
+      <parameter name="wsdlServiceElement" value="OprationServiceImplService"/>
+      <parameter name="schemaQualified" value="http://axis.wq.com"/>
+      <parameter name="wsdlServicePort" value="OprationServiceImpl"/>
+      <parameter name="className" value="com.wq.axis.OprationServiceImplSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="OprationServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="search" qname="operNS:search" xmlns:operNS="http://axis.wq.com" returnQName="retNS:searchReturn" xmlns:retNS="http://axis.wq.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:message" xmlns:pns="http://axis.wq.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="noSearch" qname="operNS:noSearch" xmlns:operNS="http://axis.wq.com" returnQName="retNS:noSearchReturn" xmlns:retNS="http://axis.wq.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:message" xmlns:pns="http://axis.wq.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="search noSearch"/>
+
+  </service>
+</deployment>

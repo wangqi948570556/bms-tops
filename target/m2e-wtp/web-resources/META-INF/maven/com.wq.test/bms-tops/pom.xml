@@ -212,6 +212,32 @@
         <artifactId>spring-data-redis</artifactId> 
        <version>1.3.4.RELEASE</version>
     </dependency>
+    <!-- axis -->
+    <dependency>  
+		<groupId>org.apache.axis2</groupId>  
+		<artifactId>axis2-kernel</artifactId>  
+		<version>1.6.1</version>  
+		</dependency>  
+		<dependency>  
+		<groupId>org.apache.axis2</groupId>  
+		<artifactId>axis2-codegen</artifactId>  
+		<version>1.6.1</version>  
+		</dependency>  
+		<dependency>  
+		<groupId>org.apache.axis2</groupId>  
+		<artifactId>axis2-adb</artifactId>  
+		<version>1.6.1</version>  
+		</dependency>  
+		<dependency>  
+		<groupId>org.apache.axis2</groupId>  
+		<artifactId>axis2-transport-local</artifactId>  
+		<version>1.6.1</version>  
+		</dependency>  
+		<dependency>  
+		<groupId>org.apache.axis2</groupId>  
+		<artifactId>axis2-transport-http</artifactId>  
+		<version>1.6.1</version>  
+		</dependency>
   </dependencies>
   <build>
        <resources>

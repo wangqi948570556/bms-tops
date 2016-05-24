@@ -33,7 +33,7 @@ save 900 1 #900秒内如果超过1个key被修改,则发起快照保存 按save�
      2.always:表示每次更新操作后手动调用fsync() 将数据写到磁盘.
      3.everysec:表示每秒同步一次.一般用everysec
 redis缓存工具类
-ValueOperations　　——基本数据类型和实体类的缓存
+ValueOperations　　——基本数据类型和实 体类的缓存
 ListOperations　　   ——list的缓存
 SetOperations　　  ——set的缓存
 HashOperations　　Map的缓存
@@ -42,6 +42,9 @@ RDB可以保存某个时间段的数据 保存RDB文件时父进程会fork一个
 （可能会丢失几分钟内的数据）
 AOF可以使用不同的fsync策略，默认每秒fsync策略,以追加日志文件的方式，出现问题可用redis-check-aof工具修复
 （文件越来越大，影响性能）
+save 900 1  900秒内有一次更新就之行save
+save 300 10
+save 60 10000
 
 sentinel(哨兵)
 

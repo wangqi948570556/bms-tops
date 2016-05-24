@@ -34,4 +34,9 @@ when Not MATCHED then
  create table bms_set_of_books_relation1 as ;
 select * from  bms_set_of_books_relation  as 
 of timestamp to_timestamp('2016-04-18 09:45:00','yyyy-mm-dd hh24:mi:ss');//注意查看系统时间
+--oracle计划任务
+variable v_job_no number;
+begin
+dbms_job.submit(:v_job_no, 'insert into jobs values(sysdate);', sysdate, 'sysdate+1/1440');
+end;
  

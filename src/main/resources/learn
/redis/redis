@@ -89,12 +89,20 @@ zcard myzset //返回指定key的元素个数
 zscore myzset value //返回指定key的指定value的score
 zremrangebyscore myzset 1 2//删除指定key指定score范围的元素
 
+redis事物
 MULTI
 set wangqi 123
 exec //事物执行
 discard //放弃事物
 watch wangqi //乐观锁（可以监听多个keyName）
- 
+redisLua脚本
+redis.call('Hget',keys[1],AVGE[1])
+
+redis发布订阅模式
+client1:subscribe msg 
+client2:subscribe msg 两个客户端同时订阅一个msg
+publish msg ‘wangqi ni hao‘ 发送消息 client1 和client2都会收到消息
+
  
  
  

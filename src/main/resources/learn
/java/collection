@@ -1,11 +1,11 @@
-  • Collection 接口是一组允许重复的对象。
-  • Set 接口继承 Collection，但不允许重复。  
-  • List 接口继承 Collection，允许重复，并引入位置下标。
-  • Map 接口既不继承 Set 也不继承 Collection,存取的是键值对
+• Collection 接口是一组允许重复的对象。
+    • Set 接口继承 Collection，但不允许重复。  
+    • List 接口继承 Collection，允许重复，并引入位置下标。
+• Map 接口既不继承 Set 也不继承 Collection,存取的是键值对
 接口 实现 历史集合类
  Set  HashSet（无序）      TreeSet（有序）  LinkedHashSet（按插入的顺序）
  List  ArrayList(有序)    Vector(线程安全)         LinkedList 
- Map  HashMap      Hashtable     TreeMap   LinkedHashMap
+ Map  HashMap      Hashtable(线程安全)   TreeMap   LinkedHashMap
 LinkedList queue = new LinkedList(); 
   queue.addFirst("");
   queue.removeLast("");

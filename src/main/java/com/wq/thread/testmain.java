@@ -1,5 +1,7 @@
 package com.wq.thread;
 
+import junit.framework.Assert;
+
 public class testmain {
 	public static void main(String[] args) throws InterruptedException {
 		//Thread类实现多线程
@@ -17,7 +19,7 @@ public class testmain {
 //		a2.start();
 //		a2.join();
 //		a3.start();
-	    System.out.println(change("1018"));
+//	    System.out.println(change("1018"));
 	}
 	
 	public static String change(String s){

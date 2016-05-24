@@ -2,7 +2,8 @@
   找到tomcat bin目录下,catelina.sh文件 设置JAVA_OPTS="-Xms 1024m –Xmx 1520m"
    - Xms为tomcat启动初始内存，一般为服务器开机后可用空闲内存减去100M
    - Xmx为tomcat最大占用内存，一般为服务器开机后可用空闲内存减去50M
-   
+   java.lang.OutOfMemoryError: PermGen space报错（永久报错区域）
+   JAVA_OPTS=-Xms64m -Xmx256m -XX : PermSize=128M -XX:MaxNewSize=256m -XX:MaxPermSize=256m
 2.如何调整tomcat的线程参数
   找到tomcat conf目录下，server.xml文件，设置：
     <Connector port="8080"

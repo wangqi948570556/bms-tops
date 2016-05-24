@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://axis.wq.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://axis.wq.com" xmlns:intf="http://axis.wq.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://axis.wq.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="search">
+    <complexType>
+     <sequence>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchResponse">
+    <complexType>
+     <sequence>
+      <element name="searchReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="noSearch">
+    <complexType>
+     <sequence>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="noSearchResponse">
+    <complexType>
+     <sequence>
+      <element name="noSearchReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="searchRequest">
+
+      <wsdl:part element="impl:search" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchResponse">
+
+      <wsdl:part element="impl:searchResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="noSearchRequest">
+
+      <wsdl:part element="impl:noSearch" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="noSearchResponse">
+
+      <wsdl:part element="impl:noSearchResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="OprationServiceImpl">
+
+      <wsdl:operation name="search">
+
+         <wsdl:input message="impl:searchRequest" name="searchRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchResponse" name="searchResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="noSearch">
+
+         <wsdl:input message="impl:noSearchRequest" name="noSearchRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:noSearchResponse" name="noSearchResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="OprationServiceImplSoapBinding" type="impl:OprationServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="search">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="noSearch">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="noSearchRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="noSearchResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="OprationServiceImplService">
+
+      <wsdl:port binding="impl:OprationServiceImplSoapBinding" name="OprationServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/bms-tops/services/OprationServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
