@@ -5,7 +5,7 @@
 接口 实现 历史集合类
  Set  HashSet（无序）      TreeSet（有序）  LinkedHashSet（按插入的顺序）
  List  ArrayList(有序)    Vector(线程安全)         LinkedList 
- Map  HashMap      Hashtable(线程安全)   TreeMap   LinkedHashMap
+ Map  HashMap      Hashtable(线程安全)   TreeMap(按顺序)   LinkedHashMap(按插入的顺序)
 LinkedList queue = new LinkedList(); 
   queue.addFirst("");
   queue.removeLast("");

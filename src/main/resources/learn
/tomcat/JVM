@@ -30,7 +30,6 @@
 JVM堆分为3部分eden和2个survivor（form和to）区
     新创建的对象存在eden区，经过一次minor GC后仍然存活的，被移到survivor区 对象在survivor区每经历一次minor GC 年龄就增加一岁
     达到一定程度就会被移到老年代
-
 年轻代采用（复制算法）
 
 
