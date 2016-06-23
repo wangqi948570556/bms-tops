@@ -39,4 +39,13 @@ variable v_job_no number;
 begin
 dbms_job.submit(:v_job_no, 'insert into jobs values(sysdate);', sysdate, 'sysdate+1/1440');
 end;
- 
+--oracle 分析函数over用法(和rank()，rowNumber())
+SELECT *
+FROM
+  (SELECT id,
+    fenshu,
+    name,
+    rank() over (partition BY name order by fenshu DESC) ro
+  FROM users   --根据名称排序
+  )
+WHERE ro=1 ;
